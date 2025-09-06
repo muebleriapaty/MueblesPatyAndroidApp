@@ -95,6 +95,14 @@
     <string name="visit_website">Visit Our Website</string>
     <string name="website_description">Explore our website https://mueblespaty.com</string>
     
+    <!-- Account Activity -->
+    <string name="account_title">My Account</string>
+    <string name="account_data_na">N/A</string>
+    <string name="failed_load_customer_data">Failed to load customer data</string>
+    <string name="error_loading_customer_data">Error loading customer data: %s</string>
+    <string name="auth_refreshed_successfully">Authentication refreshed successfully</string>
+    <string name="failed_refresh_auth">Failed to refresh authentication: %s</string>
+    
     <!-- Common -->
     <string name="loading">Loading...</string>
     <string name="error">Error</string>

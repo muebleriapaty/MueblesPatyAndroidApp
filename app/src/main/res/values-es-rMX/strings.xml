@@ -95,6 +95,14 @@
     <string name="visit_website">Visitar Nuestro Sitio Web</string>
     <string name="website_description">Explora nuestro sitio web https://mueblespaty.com</string>
     
+    <!-- Account Activity -->
+    <string name="account_title">Mi Cuenta</string>
+    <string name="account_data_na">N/A</string>
+    <string name="failed_load_customer_data">Error al cargar los datos del cliente</string>
+    <string name="error_loading_customer_data">Error cargando datos del cliente: %s</string>
+    <string name="auth_refreshed_successfully">Autenticación actualizada exitosamente</string>
+    <string name="failed_refresh_auth">Error al actualizar autenticación: %s</string>
+    
     <!-- Common -->
     <string name="loading">Cargando...</string>
     <string name="error">Error</string>

@@ -36,7 +36,7 @@ class AccountActivity : AppCompatActivity() {
         
         // Setup toolbar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "My Account"
+        supportActionBar?.title = getString(R.string.account_title)
         
         authManager = AuthManager(this)
         customerApiClient = CustomerApiClient(authManager)
@@ -83,8 +83,8 @@ class AccountActivity : AppCompatActivity() {
             try {
                 val customer = customerApiClient.getCustomer()
                 if (customer != null) {
-                    tvEmail.text = customer.email ?: "N/A"
-                    tvCustomerId.text = customer.id ?: "N/A"
+                    tvEmail.text = customer.email ?: getString(R.string.account_data_na)
+                    tvCustomerId.text = customer.id ?: getString(R.string.account_data_na)
                     
                     // Load orders
                     val orders = customerApiClient.getOrders()
@@ -97,10 +97,10 @@ class AccountActivity : AppCompatActivity() {
                         tvNoOrders.visibility = View.VISIBLE
                     }
                 } else {
-                    showError("Failed to load customer data")
+                    showError(getString(R.string.failed_load_customer_data))
                 }
             } catch (e: Exception) {
-                showError("Error loading customer data: ${e.message}")
+                showError(getString(R.string.error_loading_customer_data, e.message))
             } finally {
                 showLoading(false)
             }
@@ -115,10 +115,10 @@ class AccountActivity : AppCompatActivity() {
             showLoading(false)
             
             if (result.isSuccess) {
-                showSuccess("Authentication refreshed successfully")
+                showSuccess(getString(R.string.auth_refreshed_successfully))
                 loadCustomerData()
             } else {
-                showError("Failed to refresh authentication: ${result.error}")
+                showError(getString(R.string.failed_refresh_auth, result.error))
             }
         }
     }
