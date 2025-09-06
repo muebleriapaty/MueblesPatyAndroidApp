@@ -1,0 +1,102 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Muebles Paty</string>
+    
+    <!-- Main Activity -->
+    <string name="main_activity_title">Catálogos</string>
+    
+    <!-- Product Activity -->
+    <string name="products_title">Productos</string>
+    <string name="no_description_available">Sin descripción disponible</string>
+    
+    <!-- Product Detail -->
+    <string name="variants_section_title">Opciones Disponibles</string>
+    <string name="add_to_cart">Agregar al Carrito</string>
+    <string name="not_available">No Disponible</string>
+    <string name="select_variant">Por favor selecciona una variante</string>
+    <string name="product_added_to_cart">Producto agregado al carrito</string>
+    <string name="variant_available">Disponible</string>
+    <string name="variant_out_of_stock">Agotado</string>
+    
+    <!-- Cart -->
+    <string name="cart_empty">El carrito está vacío</string>
+    <string name="subtotal_format">Subtotal: %s</string>
+    <string name="total_format">Total: %s</string>
+    <string name="quantity_format">Cantidad: %d</string>
+    <string name="qty_format">Cant: %d</string>
+    <string name="proceed_to_checkout">Proceder al Checkout</string>
+    <string name="creating_checkout">Creando checkout...</string>
+    <string name="preparing_customer_checkout">Preparando checkout de cliente...</string>
+    
+    <!-- Login -->
+    <string name="login_dialog_title">Iniciar Sesión</string>
+    <string name="login_dialog_message">Para continuar con tu compra, necesitas iniciar sesión.\n\n✓ Administra tus pedidos\n✓ Guarda tu información de envío\n✓ Acceso más rápido al checkout</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="continue_as_guest">Continuar como Invitado</string>
+    <string name="registration_required_title">Registro Requerido</string>
+    <string name="registration_required_message">Para una mejor experiencia y seguimiento de pedidos, necesitas crear una cuenta.</string>
+    <string name="create_account">Crear Cuenta</string>
+    <string name="cancel">Cancelar</string>
+    <string name="retry">Reintentar</string>
+    <string name="login_successful">¡Inicio de sesión exitoso!</string>
+    <string name="login_failed">Inicio de sesión fallido</string>
+    <string name="authentication_failed">Error al iniciar autenticación: %s</string>
+    
+    <!-- Checkout -->
+    <string name="checkout_title">Checkout</string>
+    <string name="checkout_completed_successfully">¡Pedido completado exitosamente!</string>
+    <string name="checkout_completed_message">¡Gracias! Tu pedido ha sido procesado correctamente.</string>
+    <string name="checkout_error_occurred">Ocurrió un error durante el checkout. Por favor intenta de nuevo.</string>
+    
+    <!-- Account/Orders -->
+    <string name="order_number_format">#%s</string>
+    <string name="order_sample_title">Pedido #12345</string>
+    <string name="order_sample_date">05 Dic, 2024</string>
+    <string name="order_sample_price">$125.00 USD</string>
+    
+    <!-- Order Status Translations -->
+    <string name="order_status_pending">PENDIENTE</string>
+    <string name="order_status_authorized">AUTORIZADO</string>
+    <string name="order_status_partially_paid">PARCIALMENTE PAGADO</string>
+    <string name="order_status_paid">PAGADO</string>
+    <string name="order_status_partially_refunded">PARCIALMENTE REEMBOLSADO</string>
+    <string name="order_status_refunded">REEMBOLSADO</string>
+    <string name="order_status_voided">ANULADO</string>
+    <string name="order_status_expired">EXPIRADO</string>
+    <string name="order_status_cancelled">CANCELADO</string>
+    <string name="order_status_fulfilled">COMPLETADO</string>
+    <string name="order_status_partial">PARCIAL</string>
+    <string name="order_status_unfulfilled">NO COMPLETADO</string>
+    <string name="order_status_restocked">REABASTECIDO</string>
+    
+    <!-- Cart Summary -->
+    <string name="checkout_instructions_title">Instrucciones de checkout</string>
+    <string name="order_summary_title">Resumen de tu Pedido:</string>
+    
+    <!-- Product Samples/Placeholders -->
+    <string name="catalog_title_placeholder">Título del Catálogo</string>
+    <string name="catalog_description_placeholder">Descripción del catálogo</string>
+    <string name="product_name_placeholder">Nombre del Producto</string>
+    <string name="variant_title_placeholder">Título de Variante</string>
+    <string name="sample_price">$25.00</string>
+    <string name="product_title_placeholder">Nombre del Producto</string>
+    <string name="product_price_placeholder">$0.00</string>
+    <string name="product_description_placeholder">Descripción del producto aquí...</string>
+    
+    <!-- Currency Formats -->
+    <string name="price_format_mxn">$%.2f</string>
+    <string name="price_format_generic" formatted="false">%s %.2f</string>
+    
+    <!-- WhatsApp Contact -->
+    <string name="contact_whatsapp">Contactar por WhatsApp</string>
+    <string name="whatsapp_message">¡Hola! Tengo una pregunta sobre mi pedido %s</string>
+    
+    <!-- Website Link -->
+    <string name="visit_website">Visitar Nuestro Sitio Web</string>
+    <string name="website_description">Explora nuestro sitio web https://mueblespaty.com</string>
+    
+    <!-- Common -->
+    <string name="loading">Cargando...</string>
+    <string name="error">Error</string>
+    <string name="description_label">Descripción</string>
+</resources>

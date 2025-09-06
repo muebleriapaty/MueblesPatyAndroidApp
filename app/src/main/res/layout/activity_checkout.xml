@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckoutActivity">
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBarCheckout"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentTop="true"
+        android:progress="0"
+        android:max="100"
+        android:progressTint="@color/purple_500" />
+
+    <!-- WebView for Checkout -->
+    <WebView
+        android:id="@+id/webViewCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/progressBarCheckout" />
+
+</RelativeLayout>

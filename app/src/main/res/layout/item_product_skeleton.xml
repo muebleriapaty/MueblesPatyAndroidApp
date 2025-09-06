@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/card_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Product Image Skeleton -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/skeleton_shimmer" />
+
+        <!-- Product Title Skeleton -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/skeleton_shimmer" />
+
+        <!-- Product Title Second Line Skeleton -->
+        <View
+            android:layout_width="140dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/skeleton_shimmer" />
+
+        <!-- Product Price Skeleton -->
+        <View
+            android:layout_width="80dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/skeleton_shimmer" />
+
+        <!-- Product Description Line 1 Skeleton -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="14dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/skeleton_shimmer" />
+
+        <!-- Product Description Line 2 Skeleton -->
+        <View
+            android:layout_width="160dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/skeleton_shimmer" />
+
+        <!-- Product Description Line 3 Skeleton -->
+        <View
+            android:layout_width="120dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/skeleton_shimmer" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

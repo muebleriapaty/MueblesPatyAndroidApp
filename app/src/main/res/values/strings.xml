@@ -1,0 +1,102 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Muebles Paty</string>
+    
+    <!-- Main Activity -->
+    <string name="main_activity_title">Catalogs</string>
+    
+    <!-- Product Activity -->
+    <string name="products_title">Products</string>
+    <string name="no_description_available">No description available</string>
+    
+    <!-- Product Detail -->
+    <string name="variants_section_title">Available Options</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="not_available">Not Available</string>
+    <string name="select_variant">Please select a variant</string>
+    <string name="product_added_to_cart">Product added to cart</string>
+    <string name="variant_available">Available</string>
+    <string name="variant_out_of_stock">Out of Stock</string>
+    
+    <!-- Cart -->
+    <string name="cart_empty">Cart is empty</string>
+    <string name="subtotal_format">Subtotal: %s</string>
+    <string name="total_format">Total: %s</string>
+    <string name="quantity_format">Quantity: %d</string>
+    <string name="qty_format">Qty: %d</string>
+    <string name="proceed_to_checkout">Proceed to Checkout</string>
+    <string name="creating_checkout">Creating checkout...</string>
+    <string name="preparing_customer_checkout">Preparing customer checkout...</string>
+    
+    <!-- Login -->
+    <string name="login_dialog_title">Sign In</string>
+    <string name="login_dialog_message">To continue with your purchase, you need to sign in.\n\n✓ Manage your orders\n✓ Save your shipping information\n✓ Faster checkout access</string>
+    <string name="login_button">Sign In</string>
+    <string name="continue_as_guest">Continue as Guest</string>
+    <string name="registration_required_title">Registration Required</string>
+    <string name="registration_required_message">For a better experience and order tracking, you need to create an account.</string>
+    <string name="create_account">Create Account</string>
+    <string name="cancel">Cancel</string>
+    <string name="retry">Retry</string>
+    <string name="login_successful">Login successful!</string>
+    <string name="login_failed">Login failed</string>
+    <string name="authentication_failed">Failed to start authentication: %s</string>
+    
+    <!-- Checkout -->
+    <string name="checkout_title">Checkout</string>
+    <string name="checkout_completed_successfully">Order completed successfully!</string>
+    <string name="checkout_completed_message">Thank you! Your order has been processed correctly.</string>
+    <string name="checkout_error_occurred">An error occurred during checkout. Please try again.</string>
+    
+    <!-- Account/Orders -->
+    <string name="order_number_format">#%s</string>
+    <string name="order_sample_title">Order #12345</string>
+    <string name="order_sample_date">Dec 05, 2024</string>
+    <string name="order_sample_price">$125.00 USD</string>
+    
+    <!-- Order Status Translations -->
+    <string name="order_status_pending">PENDING</string>
+    <string name="order_status_authorized">AUTHORIZED</string>
+    <string name="order_status_partially_paid">PARTIALLY PAID</string>
+    <string name="order_status_paid">PAID</string>
+    <string name="order_status_partially_refunded">PARTIALLY REFUNDED</string>
+    <string name="order_status_refunded">REFUNDED</string>
+    <string name="order_status_voided">VOIDED</string>
+    <string name="order_status_expired">EXPIRED</string>
+    <string name="order_status_cancelled">CANCELLED</string>
+    <string name="order_status_fulfilled">FULFILLED</string>
+    <string name="order_status_partial">PARTIAL</string>
+    <string name="order_status_unfulfilled">UNFULFILLED</string>
+    <string name="order_status_restocked">RESTOCKED</string>
+    
+    <!-- Cart Summary -->
+    <string name="checkout_instructions_title">Checkout instructions</string>
+    <string name="order_summary_title">Your Order Summary:</string>
+    
+    <!-- Product Samples/Placeholders -->
+    <string name="catalog_title_placeholder">Catalog Title</string>
+    <string name="catalog_description_placeholder">Catalog description</string>
+    <string name="product_name_placeholder">Product Name</string>
+    <string name="variant_title_placeholder">Variant Title</string>
+    <string name="sample_price">$25.00</string>
+    <string name="product_title_placeholder">Product Name</string>
+    <string name="product_price_placeholder">$0.00</string>
+    <string name="product_description_placeholder">Product description here...</string>
+    
+    <!-- Currency Formats -->
+    <string name="price_format_mxn">$%.2f</string>
+    <string name="price_format_generic" formatted="false">%s %.2f</string>
+    
+    <!-- WhatsApp Contact -->
+    <string name="contact_whatsapp">Contact via WhatsApp</string>
+    <string name="whatsapp_message">Hello! I have a question about my order %s</string>
+    
+    <!-- Website Link -->
+    <string name="visit_website">Visit Our Website</string>
+    <string name="website_description">Explore our website https://mueblespaty.com</string>
+    
+    <!-- Common -->
+    <string name="loading">Loading...</string>
+    <string name="error">Error</string>
+    <string name="description_label">Description</string>
+</resources>
