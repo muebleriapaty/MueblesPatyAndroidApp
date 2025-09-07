@@ -1,11 +1,16 @@
 package com.mueblespaty
 
 import android.content.Intent
+import android.os.Build
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import com.mueblespaty.auth.AuthManager
+import com.mueblespaty.utils.DeviceUtils
 
 abstract class BaseActivity : AppCompatActivity(), CartManager.CartUpdateListener {
     
@@ -13,6 +18,47 @@ abstract class BaseActivity : AppCompatActivity(), CartManager.CartUpdateListene
     private var cartMenuItem: MenuItem? = null
     protected lateinit var authManager: AuthManager
     private var accountMenuItem: MenuItem? = null
+    
+    override fun onCreate(savedInstanceState: android.os.Bundle?) {
+        super.onCreate(savedInstanceState)
+        
+        // Only apply edge-to-edge fixes for Samsung S24 with One UI 7.0
+        if (DeviceUtils.isSamsungS24WithOneUI7()) {
+            setupEdgeToEdge()
+        }
+    }
+    
+    private fun setupEdgeToEdge() {
+        // Enable edge-to-edge display for Samsung S24 only
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        
+        // Samsung S24 specific handling for One UI 7.0
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.setFlags(
+                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            )
+        }
+    }
+    
+    protected fun setupWindowInsetsForView(view: android.view.View) {
+        // Only apply window insets handling for Samsung devices with known issues
+        if (DeviceUtils.isSamsungWithEdgeToEdgeIssues()) {
+            ViewCompat.setOnApplyWindowInsetsListener(view) { v, windowInsets ->
+                val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+                
+                // Apply padding to avoid overlap with system bars
+                v.setPadding(
+                    v.paddingLeft + insets.left,
+                    v.paddingTop + insets.top, 
+                    v.paddingRight + insets.right,
+                    v.paddingBottom + insets.bottom
+                )
+                
+                windowInsets
+            }
+        }
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)

@@ -7,6 +7,9 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +17,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import com.mueblespaty.auth.AuthManager
 import com.mueblespaty.customer.CustomerApiClient
+import com.mueblespaty.utils.DeviceUtils
 import kotlinx.coroutines.launch
 
 class AccountActivity : AppCompatActivity() {
@@ -32,7 +36,18 @@ class AccountActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Only enable edge-to-edge for Samsung S24 compatibility
+        if (DeviceUtils.isSamsungS24WithOneUI7()) {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+        }
+        
         setContentView(R.layout.activity_account)
+        
+        // Setup window insets for Samsung devices only
+        if (DeviceUtils.isSamsungWithEdgeToEdgeIssues()) {
+            setupWindowInsets()
+        }
         
         // Setup toolbar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -158,6 +173,23 @@ class AccountActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+    
+    private fun setupWindowInsets() {
+        val rootView = findViewById<View>(android.R.id.content)
+        ViewCompat.setOnApplyWindowInsetsListener(rootView) { view, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            
+            // Apply padding to avoid overlap with system bars for Samsung S24
+            view.setPadding(
+                insets.left,
+                insets.top,
+                insets.right,
+                insets.bottom
+            )
+            
+            windowInsets
         }
     }
     
