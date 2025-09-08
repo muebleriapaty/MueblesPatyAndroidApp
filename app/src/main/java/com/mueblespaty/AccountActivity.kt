@@ -180,13 +180,18 @@ class AccountActivity : AppCompatActivity() {
         val rootView = findViewById<View>(android.R.id.content)
         ViewCompat.setOnApplyWindowInsetsListener(rootView) { view, windowInsets ->
             val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val cutoutInsets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout())
             
-            // Apply padding to avoid overlap with system bars for Samsung S24
+            // Get Samsung-specific extra padding for better header spacing
+            val extraTopPadding = DeviceUtils.getSamsungS24ExtraTopPadding()
+            val extraBottomPadding = DeviceUtils.getSamsungExtraBottomPadding()
+            
+            // Apply enhanced padding for Samsung S24 with extra space for header text
             view.setPadding(
-                insets.left,
-                insets.top,
-                insets.right,
-                insets.bottom
+                insets.left + cutoutInsets.left,
+                insets.top + cutoutInsets.top + extraTopPadding,
+                insets.right + cutoutInsets.right,
+                insets.bottom + cutoutInsets.bottom + extraBottomPadding
             )
             
             windowInsets

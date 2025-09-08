@@ -41,6 +41,37 @@ object DeviceUtils {
     }
     
     /**
+     * Gets additional top padding needed for Samsung S24 header text
+     * Samsung S24 has a larger status bar and potential display cutout issues
+     */
+    fun getSamsungS24ExtraTopPadding(): Int {
+        return if (isSamsungS24WithOneUI7()) {
+            // Additional 16dp padding for Samsung S24 status bar and camera cutout
+            (16 * 3) // 48px assuming ~3x density
+        } else if (isSamsungWithEdgeToEdgeIssues()) {
+            // Additional 8dp padding for other Samsung devices
+            (8 * 3) // 24px assuming ~3x density
+        } else {
+            0
+        }
+    }
+    
+    /**
+     * Gets additional bottom padding needed for Samsung devices
+     */
+    fun getSamsungExtraBottomPadding(): Int {
+        return if (isSamsungS24WithOneUI7()) {
+            // Additional 12dp padding for Samsung S24 navigation gestures
+            (12 * 3) // 36px assuming ~3x density
+        } else if (isSamsungWithEdgeToEdgeIssues()) {
+            // Additional 8dp padding for other Samsung devices
+            (8 * 3) // 24px assuming ~3x density
+        } else {
+            0
+        }
+    }
+    
+    /**
      * Gets a descriptive string for debugging
      */
     fun getDeviceInfo(): String {

@@ -39,6 +39,12 @@ abstract class BaseActivity : AppCompatActivity(), CartManager.CartUpdateListene
                 android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
             )
         }
+        
+        // Handle display cutouts for Samsung S24 camera notch
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            window.attributes.layoutInDisplayCutoutMode = 
+                android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+        }
     }
     
     protected fun setupWindowInsetsForView(view: android.view.View) {
@@ -46,13 +52,18 @@ abstract class BaseActivity : AppCompatActivity(), CartManager.CartUpdateListene
         if (DeviceUtils.isSamsungWithEdgeToEdgeIssues()) {
             ViewCompat.setOnApplyWindowInsetsListener(view) { v, windowInsets ->
                 val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+                val cutoutInsets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout())
                 
-                // Apply padding to avoid overlap with system bars
+                // Get Samsung-specific extra padding
+                val extraTopPadding = DeviceUtils.getSamsungS24ExtraTopPadding()
+                val extraBottomPadding = DeviceUtils.getSamsungExtraBottomPadding()
+                
+                // Apply padding to avoid overlap with system bars and provide extra space
                 v.setPadding(
-                    v.paddingLeft + insets.left,
-                    v.paddingTop + insets.top, 
-                    v.paddingRight + insets.right,
-                    v.paddingBottom + insets.bottom
+                    v.paddingLeft + insets.left + cutoutInsets.left,
+                    v.paddingTop + insets.top + cutoutInsets.top + extraTopPadding,
+                    v.paddingRight + insets.right + cutoutInsets.right,
+                    v.paddingBottom + insets.bottom + cutoutInsets.bottom + extraBottomPadding
                 )
                 
                 windowInsets
