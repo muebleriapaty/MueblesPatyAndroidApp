@@ -44,6 +44,11 @@ class CartActivity : BaseActivity() {
         supportActionBar?.title = "Carrito de Compras"
         
         authManager = AuthManager(this)
+        
+        // Setup window insets for edge-to-edge compatibility
+        val rootView = findViewById<android.widget.LinearLayout>(R.id.cart_container)
+        setupWindowInsetsForView(rootView)
+        
         setupViews()
         setupShopifyClient()
         updateCartDisplay()

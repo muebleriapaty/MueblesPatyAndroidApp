@@ -65,6 +65,10 @@ class ProductsActivity : BaseActivity() {
             return
         }
 
+        // Setup window insets for edge-to-edge compatibility
+        val rootView = findViewById<android.widget.LinearLayout>(R.id.products_container)
+        setupWindowInsetsForView(rootView)
+        
         setupViews()
         setupShopifyClient()
 

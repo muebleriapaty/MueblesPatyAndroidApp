@@ -37,17 +37,13 @@ class AccountActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Only enable edge-to-edge for Samsung S24 compatibility
-        if (DeviceUtils.isSamsungS24WithOneUI7()) {
-            WindowCompat.setDecorFitsSystemWindows(window, false)
-        }
+        // Enable edge-to-edge for all devices (Android 15 requirement)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         
         setContentView(R.layout.activity_account)
         
-        // Setup window insets for Samsung devices only
-        if (DeviceUtils.isSamsungWithEdgeToEdgeIssues()) {
-            setupWindowInsets()
-        }
+        // Setup window insets for all devices
+        setupWindowInsets()
         
         // Setup toolbar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

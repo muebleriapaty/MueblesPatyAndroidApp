@@ -6,6 +6,9 @@ import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
@@ -29,7 +32,27 @@ class LoginActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Enable edge-to-edge for all devices (Android 15 requirement)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        
         setContentView(R.layout.activity_login)
+        
+        // Setup window insets for edge-to-edge compatibility
+        val rootView = findViewById<android.widget.LinearLayout>(R.id.login_container)
+        ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val cutoutInsets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout())
+            
+            v.setPadding(
+                v.paddingLeft + insets.left + cutoutInsets.left,
+                v.paddingTop + insets.top + cutoutInsets.top,
+                v.paddingRight + insets.right + cutoutInsets.right,
+                v.paddingBottom + insets.bottom + cutoutInsets.bottom
+            )
+            
+            windowInsets
+        }
         
         authManager = AuthManager(this)
         customerApiClient = CustomerApiClient(authManager)

@@ -16,8 +16,10 @@
         <item name="android:textColorPrimary">@color/text_primary_light</item>
         <item name="android:textColorSecondary">@color/text_secondary_light</item>
         
-        <!-- Status bar color - same as main theme -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Enable edge-to-edge for Android 12+ -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
     </style>
 </resources>

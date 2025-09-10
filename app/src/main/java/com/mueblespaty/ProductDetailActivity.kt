@@ -45,6 +45,10 @@ class ProductDetailActivity : BaseActivity() {
 
         productHandle = intent.getStringExtra(EXTRA_PRODUCT_HANDLE)
         
+        // Setup window insets for edge-to-edge compatibility
+        val rootView = findViewById<FrameLayout>(R.id.product_detail_container)
+        setupWindowInsetsForView(rootView)
+        
         setupViews()
         setupShopifyClient()
         showLoading()

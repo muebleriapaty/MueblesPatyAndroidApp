@@ -25,8 +25,8 @@ class MainActivity : BaseActivity() {
         authManager = AuthManager(this)
         customerApiClient = CustomerApiClient(authManager)
         
-        // Setup window insets for Samsung S24 compatibility
-        val rootView = findViewById<RecyclerView>(R.id.recyclerViewCatalogs)
+        // Setup window insets for edge-to-edge compatibility
+        val rootView = findViewById<android.widget.LinearLayout>(R.id.main_container)
         setupWindowInsetsForView(rootView)
         
         // Initialize CartManager with customer integration

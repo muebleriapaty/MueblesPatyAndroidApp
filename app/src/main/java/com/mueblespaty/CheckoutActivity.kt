@@ -12,6 +12,9 @@ import android.webkit.*
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import com.mueblespaty.auth.AuthManager
 import com.shopify.buy3.GraphClient
 import com.shopify.buy3.Storefront
@@ -36,8 +39,32 @@ class CheckoutActivity : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        // Enable edge-to-edge for all devices (Android 15 requirement)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            window.attributes.layoutInDisplayCutoutMode = 
+                android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+        }
+        
         setContentView(R.layout.activity_checkout)
         val activity = this
+
+        // Setup window insets for edge-to-edge compatibility
+        val rootView = findViewById<android.widget.RelativeLayout>(R.id.checkout_container)
+        ViewCompat.setOnApplyWindowInsetsListener(rootView) { v, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val cutoutInsets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout())
+            
+            v.setPadding(
+                v.paddingLeft + insets.left + cutoutInsets.left,
+                v.paddingTop + insets.top + cutoutInsets.top,
+                v.paddingRight + insets.right + cutoutInsets.right,
+                v.paddingBottom + insets.bottom + cutoutInsets.bottom
+            )
+            
+            windowInsets
+        }
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Checkout"

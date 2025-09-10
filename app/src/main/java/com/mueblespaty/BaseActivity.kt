@@ -22,25 +22,15 @@ abstract class BaseActivity : AppCompatActivity(), CartManager.CartUpdateListene
     override fun onCreate(savedInstanceState: android.os.Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // Only apply edge-to-edge fixes for Samsung S24 with One UI 7.0
-        if (DeviceUtils.isSamsungS24WithOneUI7()) {
-            setupEdgeToEdge()
-        }
+        // Enable edge-to-edge for all devices (Android 15 requirement)
+        setupEdgeToEdge()
     }
     
     private fun setupEdgeToEdge() {
-        // Enable edge-to-edge display for Samsung S24 only
+        // Enable edge-to-edge display for all devices (Android 15 requirement)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         
-        // Samsung S24 specific handling for One UI 7.0
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.setFlags(
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                android.view.WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-            )
-        }
-        
-        // Handle display cutouts for Samsung S24 camera notch
+        // Handle display cutouts properly
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
             window.attributes.layoutInDisplayCutoutMode = 
                 android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
@@ -48,26 +38,20 @@ abstract class BaseActivity : AppCompatActivity(), CartManager.CartUpdateListene
     }
     
     protected fun setupWindowInsetsForView(view: android.view.View) {
-        // Only apply window insets handling for Samsung devices with known issues
-        if (DeviceUtils.isSamsungWithEdgeToEdgeIssues()) {
-            ViewCompat.setOnApplyWindowInsetsListener(view) { v, windowInsets ->
-                val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
-                val cutoutInsets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout())
-                
-                // Get Samsung-specific extra padding
-                val extraTopPadding = DeviceUtils.getSamsungS24ExtraTopPadding()
-                val extraBottomPadding = DeviceUtils.getSamsungExtraBottomPadding()
-                
-                // Apply padding to avoid overlap with system bars and provide extra space
-                v.setPadding(
-                    v.paddingLeft + insets.left + cutoutInsets.left,
-                    v.paddingTop + insets.top + cutoutInsets.top + extraTopPadding,
-                    v.paddingRight + insets.right + cutoutInsets.right,
-                    v.paddingBottom + insets.bottom + cutoutInsets.bottom + extraBottomPadding
-                )
-                
-                windowInsets
-            }
+        // Apply window insets handling for all devices (Android 15 requirement)
+        ViewCompat.setOnApplyWindowInsetsListener(view) { v, windowInsets ->
+            val insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+            val cutoutInsets = windowInsets.getInsets(WindowInsetsCompat.Type.displayCutout())
+            
+            // Apply padding to avoid overlap with system bars
+            v.setPadding(
+                v.paddingLeft + insets.left + cutoutInsets.left,
+                v.paddingTop + insets.top + cutoutInsets.top,
+                v.paddingRight + insets.right + cutoutInsets.right,
+                v.paddingBottom + insets.bottom + cutoutInsets.bottom
+            )
+            
+            windowInsets
         }
     }
 
