@@ -107,4 +107,18 @@
     <string name="loading">Cargando...</string>
     <string name="error">Error</string>
     <string name="description_label">Descripción</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_subtitle">Tu tienda de muebles de confianza</string>
+    <string name="onboarding_features_title">¿Qué puedes hacer?</string>
+    <string name="onboarding_feature1_title">Explora nuestro catálogo</string>
+    <string name="onboarding_feature1_desc">Navega por nuestras colecciones de muebles directamente desde nuestra tienda en línea</string>
+    <string name="onboarding_feature2_title">Agrega al carrito y compra</string>
+    <string name="onboarding_feature2_desc">Selecciona tus productos favoritos y completa tu compra de forma segura</string>
+    <string name="onboarding_feature3_title">Contáctanos por WhatsApp</string>
+    <string name="onboarding_feature3_desc">¿Tienes dudas? Comunícate con nosotros directamente para atención personalizada</string>
+    <string name="onboarding_location_title">Encuéntranos</string>
+    <string name="onboarding_address">Av. México 228\nCol. Raúl Romero\nNezahualcóyotl, Edo. de México\nMéxico</string>
+    <string name="onboarding_hours">Abrimos todos los días</string>
+    <string name="onboarding_cta">Explorar Catálogo</string>
 </resources>

@@ -107,4 +107,18 @@
     <string name="loading">Loading...</string>
     <string name="error">Error</string>
     <string name="description_label">Description</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_subtitle">Your trusted furniture store</string>
+    <string name="onboarding_features_title">What can you do?</string>
+    <string name="onboarding_feature1_title">Browse our catalog</string>
+    <string name="onboarding_feature1_desc">Explore our furniture collections directly from our online store</string>
+    <string name="onboarding_feature2_title">Add to cart and checkout</string>
+    <string name="onboarding_feature2_desc">Select your favorite products and complete your purchase securely</string>
+    <string name="onboarding_feature3_title">Contact us via WhatsApp</string>
+    <string name="onboarding_feature3_desc">Have a question? Reach us directly for personalized support</string>
+    <string name="onboarding_location_title">Find us</string>
+    <string name="onboarding_address">Av. México 228\nCol. Raúl Romero\nNezahualcóyotl, Edo. de México\nMéxico</string>
+    <string name="onboarding_hours">Open 7 days of the week</string>
+    <string name="onboarding_cta">Explore Catalog</string>
 </resources>
