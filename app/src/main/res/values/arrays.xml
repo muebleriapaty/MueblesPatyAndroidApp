@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="faq_questions">
+        <item>How can I browse the furniture catalog?</item>
+        <item>How do I add a product to my cart?</item>
+        <item>How do I place an order?</item>
+        <item>Do I need an account to shop?</item>
+        <item>What payment methods do you accept?</item>
+        <item>Do you offer home delivery?</item>
+        <item>Can I visit your store in person?</item>
+        <item>How can I contact you?</item>
+    </string-array>
+
+    <string-array name="faq_answers">
+        <item>Open the app and you will see all our available collections on the main screen. Tap any collection to explore the products inside.</item>
+        <item>Open a product, select your preferred variant (size, color, material, etc.), and tap "Add to Cart".</item>
+        <item>Once you have added items to your cart, tap the cart icon and then "Proceed to Checkout". You will be guided through our secure Shopify checkout.</item>
+        <item>You can browse the full catalog without an account. To complete a purchase and track your orders, you will need to sign in or create a free account.</item>
+        <item>We accept: Visa, Mastercard, American Express, PayPal, Mercado Pago, Kueski Pay, Atrato Pago, Aplazo, OXXO (cash at convenience stores), and Cash on Delivery.</item>
+        <item>Yes! We deliver to many locations. Shipping details and costs are calculated at checkout based on your address.</item>
+        <item>Absolutely! You can find us at Av. México 228, Col. Raúl Romero, Nezahualcóyotl, Estado de México. We are open every day — come say hello!</item>
+        <item>You can reach us via the WhatsApp button on any product page, or visit our website at mueblespaty.com. We are happy to help!</item>
+    </string-array>
+</resources>

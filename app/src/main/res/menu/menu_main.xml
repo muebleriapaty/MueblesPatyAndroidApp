@@ -13,5 +13,10 @@
         android:icon="@android:drawable/ic_menu_myplaces"
         android:title="Account"
         app:showAsAction="ifRoom" />
-        
+
+    <item
+        android:id="@+id/action_faq"
+        android:title="@string/faq_title"
+        app:showAsAction="never" />
+
 </menu>

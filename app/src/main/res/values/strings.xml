@@ -108,6 +108,9 @@
     <string name="error">Error</string>
     <string name="description_label">Description</string>
 
+    <!-- FAQ -->
+    <string name="faq_title">FAQ</string>
+
     <!-- Onboarding -->
     <string name="onboarding_subtitle">Your trusted furniture store</string>
     <string name="onboarding_features_title">What can you do?</string>

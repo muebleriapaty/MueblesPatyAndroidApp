@@ -108,6 +108,9 @@
     <string name="error">Error</string>
     <string name="description_label">Descripción</string>
 
+    <!-- FAQ -->
+    <string name="faq_title">Preguntas Frecuentes</string>
+
     <!-- Onboarding -->
     <string name="onboarding_subtitle">Tu tienda de muebles de confianza</string>
     <string name="onboarding_features_title">¿Qué puedes hacer?</string>

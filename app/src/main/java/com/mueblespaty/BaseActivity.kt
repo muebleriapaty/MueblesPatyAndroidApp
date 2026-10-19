@@ -89,6 +89,10 @@ abstract class BaseActivity : AppCompatActivity(), CartManager.CartUpdateListene
                 onAccountClicked()
                 true
             }
+            R.id.action_faq -> {
+                startActivity(Intent(this, FaqActivity::class.java))
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="faq_questions">
+        <item>¿Cómo puedo explorar el catálogo de muebles?</item>
+        <item>¿Cómo agrego un producto al carrito?</item>
+        <item>¿Cómo hago un pedido?</item>
+        <item>¿Necesito una cuenta para comprar?</item>
+        <item>¿Qué métodos de pago aceptan?</item>
+        <item>¿Hacen entregas a domicilio?</item>
+        <item>¿Puedo visitar su tienda en persona?</item>
+        <item>¿Cómo puedo contactarlos?</item>
+    </string-array>
+
+    <string-array name="faq_answers">
+        <item>Abre la app y verás todas nuestras colecciones disponibles en la pantalla principal. Toca cualquier colección para explorar los productos.</item>
+        <item>Abre un producto, selecciona tu variante preferida (tamaño, color, material, etc.) y toca "Agregar al Carrito".</item>
+        <item>Una vez que hayas agregado artículos al carrito, toca el ícono del carrito y luego "Proceder al Checkout". Te guiaremos por nuestro proceso seguro de pago con Shopify.</item>
+        <item>Puedes navegar por el catálogo completo sin cuenta. Para completar una compra y rastrear tus pedidos, necesitarás iniciar sesión o crear una cuenta gratuita.</item>
+        <item>Aceptamos: Visa, Mastercard, American Express, PayPal, Mercado Pago, Kueski Pay, Atrato Pago, Aplazo, OXXO (pago en efectivo en tiendas de conveniencia) y Pago Contra Entrega.</item>
+        <item>¡Sí! Hacemos entregas a muchas ubicaciones. Los detalles y costos de envío se calculan en el checkout según tu dirección.</item>
+        <item>¡Claro que sí! Nos encuentras en Av. México 228, Col. Raúl Romero, Nezahualcóyotl, Estado de México. Abrimos todos los días — ¡ven a visitarnos!</item>
+        <item>Puedes comunicarte con nosotros a través del botón de WhatsApp en cualquier página de producto, o visitar nuestro sitio web mueblespaty.com. ¡Con gusto te atendemos!</item>
+    </string-array>
+</resources>

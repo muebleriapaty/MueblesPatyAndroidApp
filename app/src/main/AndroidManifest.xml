@@ -75,6 +75,11 @@
             android:exported="false"
             android:parentActivityName=".LoginActivity" />
 
+        <activity
+            android:name=".FaqActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <!-- OAuth redirect handler -->
         <activity
             android:name="net.openid.appauth.RedirectUriReceiverActivity"
